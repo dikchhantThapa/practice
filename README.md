@@ -1,2 +1,2 @@
-# practice
+# Practice
 Some quick practice programs
