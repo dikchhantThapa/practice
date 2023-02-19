@@ -11,6 +11,7 @@ public class Main {
     }
 }
 
+
 /*
 // enum currency declaration
 enum Currency {
