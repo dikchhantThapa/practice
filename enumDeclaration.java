@@ -10,3 +10,11 @@ public class Main {
         }
     }
 }
+
+/*
+// enum currency declaration
+enum Currency {
+    USD, EUR, GBP, RUB, UAH, KZT, CAD, JPY, CNY;
+}
+
+*/
