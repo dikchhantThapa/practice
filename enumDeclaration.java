@@ -1,3 +1,4 @@
+// enum declaration 
 enum DayOfWeek {
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY;
 }
