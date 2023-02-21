@@ -1,3 +1,4 @@
+// this program swaps the integers of two use input numbers
 import java.util.Scanner;
 
 class Util {
