@@ -34,3 +34,4 @@ class Main {
         System.out.println(ints[0]);
     }
 }
+
