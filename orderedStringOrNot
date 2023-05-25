@@ -1,24 +1,23 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-    
+        // put your code here
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your input: ");
+        //System.out.println("Enter your input: ");
         String input = scanner.next();
+        input = input.toLowerCase();
 
         System.out.println(isOrdered(input));
     }
 
     public static boolean isOrdered(String input) {
-        input = input.toLowerCase(Locale.ROOT);
 
-        for(int i = 0; i < input.length() - 1; i++) {
+        for (int i = 0; i < input.length() - 1; i++) {
             int inputASCII = (int) input.charAt(i);
             int inputPlusOne = (int) input.charAt(i + 1);
 
-            if(inputASCII + 1 != inputPlusOne) {
+            if (inputASCII + 1 != inputPlusOne) {
                 return false;
             }
         }
