@@ -4,7 +4,7 @@ class Main {
     public static void main(String[] args) {
         // put your code here
         Scanner scanner = new Scanner(System.in);
-        //System.out.println("Enter your input: ");
+        System.out.println("Enter your input: ");
         String input = scanner.next();
         input = input.toLowerCase();
 
