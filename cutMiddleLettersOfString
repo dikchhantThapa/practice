@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+
+        String outputString = "";
+
+        if (input.length() % 2 == 0) {
+            // even length
+            outputString = input.substring(0, input.length() / 2 - 1) + input.substring((input.length() / 2 + 1));
+            // for first half of String = start from 0th index, then go up to half. Then Skip the letter next to half 
+            // for second half of Strnig = start from half(skipping one letter) then go till the end  
+        }   else {
+            // odd length
+            outputString = input.substring(0, input.length() / 2) + input.substring((input.length() / 2 + 1));
+        }
+
+        System.out.println(outputString);
+        
+    }
+}
+
+/*
+Write a program that reads a string, and then outputs the string without its middle character when the length is odd,
+and without the middle 2 characters when the length is even.
+
+Sample Input 1:
+Hello
+Sample Output 1:
+Helo
+
+
+Sample Input 2:
+abcd
+Sample Output 2:
+ad
+
+*/
