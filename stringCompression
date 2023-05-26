@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your input: ");
+        String input = scanner.next();
+
+        System.out.println(compressedString(input));
+
+    }
+
+    public static String compressedString(String input) {
+
+        String compressedString = "";
+
+        int count = 1;
+
+        for (int i = 0; i < input.length(); i++) {
+
+            if (i < input.length() - 1 && input.charAt(i) == input.charAt(i + 1)) {
+                count++;
+            }   else {
+                compressedString += input.charAt(i) + String.valueOf(count);
+                count = 1;
+            }
+        }
+
+        return compressedString;
+
+    }
+}
+
+/*
+
+This code Encodes a String by converting it to a new String that groups the same characters of the input and number of its repititions together
+Example - The string "aaaabbсaa" is converted into "a4b2с1a2"
+There is a similar leetcode question with the link below:
+https://leetcode.com/problems/string-compression/description/
+
+
+*/
+
