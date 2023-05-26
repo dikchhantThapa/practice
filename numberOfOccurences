@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String str1 = scanner.nextLine();
+        String str2 = scanner.next();
+
+        int count = 0;
+
+        // if str1 ends with str2, add 1 to count and remove str2 at the end of str1
+        if (str1.endsWith(str2)) {
+            count++;
+            str1 = str1.substring(0, str1.length() - str2.length());
+            // 0 is the beginning index , str1.length() - str2.length() is the ending index
+            // Means we start from 0th index and the last index will be last letter after deducting str2 from str1
+        }
+
+        String[] substrings = str1.split(str2);
+        count += substrings.length - 1;
+
+        System.out.println(count);
+
+    }
+}
+
+/*
+Write a program that finds the frequency of occurrences of a substring in a given string.
+
+Sample Input 1:
+ababa
+aba
+Sample Output 1:
+1
+
+
+Sample Input 2:
+hello yellow jello
+ll
+Sample Output 2:
+3
+
+
+*/
