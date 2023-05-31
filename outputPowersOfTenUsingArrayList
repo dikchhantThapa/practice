@@ -1,6 +1,9 @@
 /*
 This program outputs the powers of 10 for 5 times using an ArrayList
 
+Output
+1 10 100 1000 10000
+
 */
 
 import java.util.*;
