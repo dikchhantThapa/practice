@@ -1,0 +1,27 @@
+/*
+This program outputs the powers of 10 for 5 times using an ArrayList
+
+*/
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    ArrayList<Long> powersOfTen = new ArrayList<>();
+        
+        int count = 5; 
+        for (int i = 0; i < count; i++) {
+            long power = (long) Math.pow(10, i);
+            powersOfTen.add(power);
+        }
+        
+        for (Long output : powersOfTen) {
+            System.out.print(output + " ");
+        }
+        
+	}
+}
+
+
