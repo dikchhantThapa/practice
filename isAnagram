@@ -1,0 +1,86 @@
+/*
+Write a program that finds out whether two words are anagrams or not. If one word is an anagram of another, print "yes", else print "no".
+
+Note: anagrams are words that contain the same characters with the same frequencies. In other words, anagrams are created by changing the order of letters in the word.
+
+For example:
+
+"ppaaagg" (2 ps, 3 as, 2 gs) and "gagaapp" (2 ps, 3 as, 2 gs) are anagrams;
+"hello" (1 h, 1 e, 2 ls, 1 o) and "helllo" (1 h, 1 e, 3 ls, 1 o) are not anagrams.
+Remember: anagrams are case-insensitive.
+*/
+
+
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        // put your code here
+        Scanner scanner = new Scanner(System.in);
+
+        String word1 = scanner.next();
+        String word2 = scanner.next();
+
+        System.out.println(isAnagram(word1, word2));
+
+    }
+
+    public static String isAnagram(String word1, String word2) {
+
+        if (word1.length() != word2.length()) {
+            return "no";
+        }
+
+        word1 = word1.toLowerCase();
+        word2 = word2.toLowerCase();
+
+        Map<Character, Integer> map1 = new HashMap<>();
+        Map<Character, Integer> map2 = new HashMap<>();
+
+        // setup HashMaps for both the input words
+        // Character is Key and Frequency of character is Value
+        for (int i = 0; i < word1.length(); i++) {
+            map1.put(word1.charAt(i), map1.getOrDefault(word1.charAt(i), 0) + 1);
+        }
+
+        for (int i = 0; i < word2.length(); i++) {
+            map2.put(word2.charAt(i), map2.getOrDefault(word2.charAt(i), 0) + 1);
+        }
+
+        for (char letter : map1.keySet()) {
+            if (map1.containsKey(letter) && map1.get(letter).equals(map2.get(letter))) {
+                return "yes";
+            }
+        }
+        return "no";
+
+        // another way
+//        for (char letter : map1.keySet()) {
+//            if (!map2.containsKey(letter) || !map2.get(letter).equals(map2.get(letter))) {
+//                return "no";
+//            }
+//        }
+//        return "yes";
+
+        // another way
+//        for (var charInMap1 : map1.entrySet()) {
+//            char c = charInMap1.getKey();
+//            int frequency = charInMap1.getValue();
+//            if (!map2.containsKey(c) || !map2.get(c).equals(frequency)) {
+//                return "no";
+//            }
+//        }
+//        return "yes";
+
+        // another way
+//        if (map1.equals(map2)) {
+//            return "yes";
+//        }   else {
+//            return "no";
+//        }
+
+
+
+    }
+}
