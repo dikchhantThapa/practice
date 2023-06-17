@@ -21,6 +21,7 @@ class Main {
         }
       }
       System.out.println(greatest);
+      scanner.close();
     }  catch (FileNotFoundException e) {
       System.out.println("File not found");
     }
