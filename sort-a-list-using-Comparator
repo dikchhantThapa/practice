@@ -1,0 +1,42 @@
+import java.util.*;
+
+// this method will work well for "Sort All" for my Budget Manager project
+
+class Main {
+  public static void main(String[] args) {
+    HashMap<String, Double> map = new HashMap<>();
+    ArrayList<Double> list = new ArrayList<>();
+    double sum = 0.0;
+    
+    map.put("Milk", 3.50);
+    map.put("Vests $10 each 10 pieces", 100.00);
+    map.put("Netflix", 14.99);
+    map.put("County park parking", 6.00);
+    map.put("Insurance bills", 79.99);
+
+    for (var item : map.entrySet()) {
+      list.add(item.getValue());
+    }
+
+    // sorting the list
+    Collections.sort(list, Comparator.reverseOrder());
+    //System.out.println(list);
+
+    // now search for Value in the hashmap and then print it out along with its Key
+    // for (int i = 0; i < list.size(); i++) {
+    //   map.get(list[i]);
+    // }
+
+    for (var num : list) {
+      for (var entry : map.entrySet()) {
+        if (entry.getValue().equals(num)) {
+          System.out.println(entry.getKey() + " $" + num);
+          sum += num;
+        }
+      }
+    }
+
+    System.out.printf("Sum = $%.2f", sum);
+    
+  }
+}
