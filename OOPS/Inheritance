@@ -1,0 +1,36 @@
+class Shape {
+  public void area() {
+    System.out.println("Displays area");
+  }
+}
+
+// hierarchial inheritance (Circle and Triangle both inherits from Shape Superclass)
+class Circle extends Shape {
+  public void area(int radius) {
+    System.out.println((3.14) * radius * radius);
+  }
+}
+
+// inherits property from Shape superclass(base class)
+class Triangle extends Shape {
+  public void area(int length, int height) {
+    System.out.println(1/2 * length * height);
+  }
+}
+
+// multi level inheritance (this is extended from another subclass)
+class EquilateralTriangle extends Triangle{
+  public void area(int length, int height) {
+    System.out.println(1/2 * length * height);
+  }
+}
+
+
+class Main {
+  public static void main(String[] args) {
+    Triangle t1 = new Triangle();
+    t1.color = "red";
+
+    
+  }
+}
