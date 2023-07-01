@@ -1,0 +1,20 @@
+class Student {
+  String name;
+  static String school;  // for all, school name will be the same
+  // we use static for those things(variables or methods) that we want to be Common throughout 
+
+  public static void changeSchool() {
+    school = "new School";  // this changes the static variable
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Student.school = "SXJ";
+    Student student1 = new Student();
+    student1.name = "Jon";
+    System.out.println(student1.school);
+
+    
+  }
+}
