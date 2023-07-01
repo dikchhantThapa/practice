@@ -1,0 +1,56 @@
+/* 
+we make it abstract class because we don't implement walk function and it is overridden by subclasses.
+
+Abstract is a thought that exists, but it doesn't have to be used. (There is an animal, an it is just a concept)
+*/
+// animal is just a concept(a blueprint)
+abstract class Animal {
+  abstract void walk();
+    /* since there is no individual use of this function, it's just abstract 
+     But we NEED a walk function, since all animals walk
+     So in this case, we made it abstract
+    */
+
+  Animal() {
+    // constructor
+    System.out.println("You are creating a new Animal");
+  }
+
+  public void eat() {
+    System.out.println("Animal eats");
+  }
+}
+
+class Horse extends Animal {
+  Horse() {
+    // constructor
+    System.out.println("Created a Horse");
+  }
+  public void walk() {
+    System.out.println("Walks on 4 legs");
+  }
+}
+
+class Chicken extends Animal  {
+  public void walk() {
+    System.out.println("Walks on 2 legs");
+  }
+  
+}
+
+class Main {
+  public static void  main(String[] args) {
+    Horse horse = new Horse();
+    /*
+    because of constructor chaining, Animal() gets printed first, and then only Horse() is printed
+    Output:
+    You are creating a new Animal
+    Created a Horse
+    */
+    
+    
+    // horse.walk();
+    // horse.eat();
+    
+  }
+}
