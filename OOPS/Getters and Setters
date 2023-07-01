@@ -1,0 +1,31 @@
+class Account {
+  public String name;
+  protected String email;
+  private String password;  // only accessible within the same class
+
+  // we need getters & setters to access Private
+  public String getPassword() {
+    /*
+    we can also do
+    setPassword(randomPass);
+    to be called automatically and return it
+    that way, if setPassword is set to "private", it can still be accessed since it will be passed/set in the beginning
+    */
+    return this.password;
+  }
+
+  public void setPassword(String pass) {
+    this.password = pass; 
+  }
+}
+
+
+class Main {
+  public static void main(String[] args) {
+    Account account1 = new Account();
+    account1.name = "My account";
+    account1.email = "myemail@gmail.com";
+    account1.setPassword("abcd");
+    System.out.println(account1.getPassword());
+  }
+}
