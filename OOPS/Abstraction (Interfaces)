@@ -1,0 +1,29 @@
+interface Animal {
+  // all fields in interfaces are public, static, and final by default
+  // all methods are abstract and public by default
+  int eyes = 2;
+  void walk(); // abstract function
+}
+
+interface Herbivore {
+  
+}
+
+// interfaces is always implemented
+// so we use the "implements" keyword
+class Horse implements Animal, Herbivore {
+  /* multiple inheritance only possible from Interfaces(NOT from classes).
+  in this example, Horse implements both Animal and Herbivore interfaces
+  */
+  public void walk() {
+    System.out.println("Walks on 4 legs");
+  }
+}
+
+
+class Main {
+  public static void main(String[] args) {
+    Horse horse = new Horse();
+    horse.walk();
+  }
+}
