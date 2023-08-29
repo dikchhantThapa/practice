@@ -1,0 +1,37 @@
+/*
+Implement a method to concatenate all strings from the given array to a single long string. You must skip all digits inside the input strings.
+
+Use StringBuilder to solve the problem, because the input array can contain a huge number of strings.
+
+Sample Input 1:
+T7est i1nput
+
+Sample Output 1:
+Testinput
+
+*/
+
+import java.util.Scanner;
+
+class ConcatenateStringsProblem {
+
+    public static String concatenateStringsWithoutDigits(String[] strings) {
+        // write your code with StringBuilder here
+        StringBuilder sb = new StringBuilder();
+        for(String str : strings) {
+            for (char c : str.toCharArray()) {   // also converting it to a Char
+                if (!Character.isDigit(c)) {     // if it's a letter, add it to answer
+                    sb.append(c);
+                }
+            }
+        }
+        return sb.toString();    // convert back to String and return 
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] strings = scanner.nextLine().split("\\s+");
+        String result = concatenateStringsWithoutDigits(strings);
+        System.out.println(result);
+    }
+}
