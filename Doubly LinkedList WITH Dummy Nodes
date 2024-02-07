@@ -24,8 +24,6 @@ public class Main {
     tail.prev = head; 
   }
 
-  
-
   // add to end
   public void addToEnd (ListNode nodeToAdd) {
     nodeToAdd.next = tail;
@@ -65,12 +63,25 @@ public class Main {
     nodeToRemove.next.prev = head;
     head.next = nodeToRemove.next;
   }
-  
+
+  // method to print linked list
+  public void printList(ListNode head, ListNode tail) {
+    ListNode current = head.next;  // current = head.next
+    // go until we reach the tail (print all the nodes)
+    while (current != tail) {
+      System.out.print(current.val);   // print current node
+      if (current.next != tail) {
+        // print "<->" only if there is next node
+        System.out.print(" <-> ");
+      }
+      current = current.next;
+    }
+    System.out.println("\n");
+  }
   
   public static void main(String[] args) {
-    // insert values here 
-
-    Main list1 = new Main();
+    
+    Main list1 = new Main();    // linked list 1
 
     // create Nodes
     ListNode one = new ListNode(1);
@@ -89,63 +100,21 @@ public class Main {
     // two.prev = one;
     // two.next = three;
     // three.prev = two;
-
     
-    // start from the actual 1st node
-    ListNode current = list1.head.next;  
-    
-    // while (current != null) {
-
+    // print original list
     System.out.println("Original List: ");
-    // go until we reach the tail (print the list)
-    while (current != list1.tail) {
-      System.out.print(current.val);    // current node
-      if (current.next != list1.tail) {
-        // print "<->" only if there is 
-        System.out.print(" <-> ");
-      }
-      current = current.next;
-    }
-    System.out.println("\n");
+    list1.printList(list1.head, list1.tail);
 
-
-
-    // removing node at the end of the list
+    // Remove node at the end of the list and print it
     list1.removeFromEnd();
-
     System.out.println("List after removing from end: ");
-    // printing list after removal from end
-    current = list1.head.next;    // move pointer back to front
-    while (current != list1.tail) {
-      System.out.print(current.val);    // current node
-      if (current.next != list1.tail) {
-        // print "<->" only if there is 
-        System.out.print(" <-> ");
-      }
-      current = current.next;
-    }
-    System.out.println("\n");
-
+    list1.printList(list1.head, list1.tail);
     
-    // removing node at the front of the list
+    // Remove node at the front of the list and print it
     list1.removeFromStart();
-
     System.out.println("List after removing from start: ");
-    // printing list after removal from start
-    current = list1.head.next;   // move pointer back to front
-    while (current != list1.tail) {
-      System.out.print(current.val);    // current node
-      if (current.next != list1.tail) {
-        // print "<->" only if there is 
-        System.out.print(" <-> ");
-      }
-      current = current.next;
-    }
-    System.out.println("\n");
-
-    
+    list1.printList(list1.head, list1.tail);
     
   }
-
 
 }
