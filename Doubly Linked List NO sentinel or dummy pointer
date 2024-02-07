@@ -1,0 +1,52 @@
+public class Main {
+
+  // ListNode
+  public static class ListNode {
+    int val;
+    ListNode next;
+    ListNode prev;
+    ListNode (int val) {
+      this.val = val;
+    }
+  }
+
+  // add Node with a Node given
+  public static void addNode (ListNode node, ListNode nodeToAdd) {
+    /* 
+    Initial =      0 <--> 1 (node) <-->  2      4 (nodeToAdd) 
+
+    AddNode
+    
+        0 (prevNode) <--> 1 (node) <-->  2
+        0 (prevNode) <--> 1 (node) <-->  2      4 (nodeToAdd) --> 1 (node)
+        0 (prevNode) <--> 1 (node) <-->  2      0 (prevNode) <-- 4 (nodeToAdd) --> 1 (node)   
+        0 (prevNode) <--  1 (node) <-->  2      0 (prevNode) <--> 4 (nodeToAdd)
+        0 (prevNode) <---> 4 (nodeToAdd) <--> 1 (node) <--> 2 
+        
+
+    */
+    ListNode prevNode = node.prev;   
+    nodeToAdd.next = node;          
+    nodeToAdd.prev = prevNode;
+    prevNode.next = nodeToAdd;
+    node.prev = nodeToAdd;
+     
+  }
+
+  // delete specific Node here
+  public static void deleteNode (ListNode node) {
+    ListNode prevNode = node.prev;
+    ListNode nextNode = node.next;
+    prevNode.next = nextNode;
+    nextNode.prev = prevNode;
+  }
+  
+  public static void main(String[] args) {
+    ListNode one = new ListNode(1);
+
+    System.out.println(one.val);
+    
+  }
+
+}
+
