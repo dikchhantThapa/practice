@@ -1,0 +1,46 @@
+public class Main {
+
+  public static class ListNode {
+    int val;
+    ListNode next;
+    ListNode (int val) {
+      this.val = val;
+    }
+    
+  }
+  
+  public static void main(String[] args) {
+    ListNode one = new ListNode(1);
+    ListNode two = new ListNode(2);
+    ListNode three = new ListNode(3);
+    // 1 --> 2 --> 3
+    one.next = two;
+    two.next = three;
+    ListNode head = one;     // head = 1 
+
+    System.out.println(head.val);    // 1
+    System.out.println(head.next.val);  // 2
+    System.out.println(head.next.next.val);  // 3 
+
+    /*
+    
+    Output:
+      1
+      2
+      3
+      
+    */
+    
+    
+    System.out.println(two.val);  // 2
+    System.out.println(two.next.val);  // 2--> 3  = 3
+
+    
+    // System.out.println(three.next);   // null
+    // System.out.println(three.next.val);  //  exception
+
+    
+  }
+
+
+}
